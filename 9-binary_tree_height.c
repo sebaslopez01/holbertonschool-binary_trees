@@ -2,12 +2,12 @@
 
 
 /**
- * binary_tree_height - Measures the height of a binary tree
+ * binary_tree_height_helper - Measures the height of a binary tree
  * @tree: A pointer to the root node of the tree
  *
- * Return: The height of the tree
+ * Return: The height of the full tree
  */
-size_t binary_tree_height(const binary_tree_t *tree)
+size_t binary_tree_height_helper(const binary_tree_t *tree)
 {
 	size_t left_side, right_side;
 
@@ -21,4 +21,16 @@ size_t binary_tree_height(const binary_tree_t *tree)
 		return (left_side + 1);
 
 	return (right_side + 1);
+}
+
+
+/**
+ * binary_tree_height - Measures the height of a binary tree
+ * @tree: A pointer to the root node of the tree
+ *
+ * Return: The height of the tree
+ */
+size_t binary_tree_height(const binary_tree_t *tree)
+{
+	return (binary_tree_height_helper(tree) - 1);
 }
